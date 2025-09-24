@@ -1,0 +1,13 @@
+{
+  "name": "messenger-mvp",
+  "private": true,
+  "workspaces": ["server", "web"],
+  "scripts": {
+    "setup": "npm --prefix server i && npm --prefix web i",
+    "dev": "concurrently -k -n server,web -c green,blue \"npm run start --prefix server\" \"npm run dev --prefix web\"",
+    "build": "npm --prefix web run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
